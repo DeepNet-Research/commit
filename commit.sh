@@ -23,4 +23,8 @@ git add -A # Add all the files
 git commit -m "$cmessage" -m "$desc"
 
 echo "If you have already published the repo then only you can push. Use git remote add origin <remote_repo_url> to add"
-read -p "Push to github? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] git push || exit 1
+read -p "Push to github? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+
+if [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] ; then
+  git push
+fi
